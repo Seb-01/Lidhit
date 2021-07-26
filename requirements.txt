@@ -8,7 +8,7 @@ itsdangerous==2.0.1
 certifi==2021.5.30
 urllib3==1.26.6
 six==1.16.0
-idna=3.2
+idna==3.2
 jsonschema==3.2.0
 pyrsistent==0.18.0
 setuptools==57.4.0
