@@ -5,7 +5,7 @@ from validation import replacing_value_with_type
 
 app = Flask(__name__)
 
-db = TinyDB('db/db.json')
+db = TinyDB('db.json')
 
 @app.route("/db_all")
 def all_db_rec():

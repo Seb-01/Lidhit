@@ -1,16 +1,21 @@
 import requests
-import json
+import sys
 
+def main():
+    """
 
-payload = {
-    'user_phone':'+7 926 200 15 17',
-    'user_email':"petya@go.ru",
-    'subjects': 'text',
-    'order_date':'2021-07-23'
-}
+    :return:
+    """
+    # читаем файл с формой
+    print(sys.argv[1])
+    with open(sys.argv[1], 'r') as f:
+        payload=f.read()
 
-headers = {'content-type': 'application/json'}
+    headers = {'content-type': 'application/json'}
+    # делаем запрос
+    ret = requests.post('http://127.0.0.1:5000/get_form', data=payload, headers=headers)
 
-ret = requests.post('http://127.0.0.1:5000/get_form', data=json.dumps(payload), headers=headers)
+    print(ret.text)
 
-print(ret.text)
+if __name__ == "__main__":
+    main()
